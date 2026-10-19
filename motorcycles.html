@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoDeals | Motorcycles</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                MOTO<span>DEALS</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">HOME</a>
+                <a href="motorcycles.html">MOTORCYCLES</a>
+                <a href="compare.html">COMPARE PRICES</a>
+                <a href="about.html">ABOUT US</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <section class="intro section-container">
+            <p class="eyebrow">EXPLORE OUR COLLECTION</p>
+            <h2>Motorcycles for Sale</h2>
+            <p>Discover motorcycles and compare example prices.</p>
+        </section>
+
+        <section class="products-section section-container">
+
+            <!-- SEARCH AND FILTERS -->
+            <div class="filter-bar">
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search motorcycle or brand..."
+                    aria-label="Search motorcycles">
+
+                <select id="brandFilter" aria-label="Filter by brand">
+                    <option value="all">All Brands</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Yamaha">Yamaha</option>
+                    <option value="Suzuki">Suzuki</option>
+                    <option value="Kawasaki">Kawasaki</option>
+                </select>
+
+                <select id="sortFilter" aria-label="Sort by price">
+                    <option value="default">Default Order</option>
+                    <option value="low">Lowest Price</option>
+                    <option value="high">Highest Price</option>
+                    <option value="savings">Highest Sample Savings</option>
+                </select>
+            </div>
+
+            <p id="resultCount" class="result-count">
+                Loading motorcycles...
+            </p>
+
+            <!-- JAVASCRIPT INSERTS CARDS HERE -->
+            <div class="product-grid" id="productGrid"></div>
+
+            <p id="emptyMessage" class="empty-message" hidden>
+                No motorcycles found. Try another search.
+            </p>
+
+            <p class="disclaimer">
+                All prices below are illustrative demonstration values,
+                not verified market prices or current offers.
+            </p>
+
+        </section>
+
+        <!-- OFFICIAL WEBSITES -->
+        <section class="brands-section section-container">
+            <h2>Official Motorcycle Websites</h2>
+
+            <div class="brand-grid">
+                <a class="brand-card"
+                   href="https://www.hondaph.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    <h3>Honda ↗</h3>
+                    <p>Visit official website</p>
+                </a>
+
+                <a class="brand-card"
+                   href="https://www.yamaha-motor.com.ph/"
+                   target="_blank" rel="noopener noreferrer">
+                    <h3>Yamaha ↗</h3>
+                    <p>Visit official website</p>
+                </a>
+
+                <a class="brand-card"
+                   href="https://mc.suzuki.com.ph/"
+                   target="_blank" rel="noopener noreferrer">
+                    <h3>Suzuki ↗</h3>
+                    <p>Visit official website</p>
+                </a>
+
+                <a class="brand-card"
+                   href="https://kawasakiph.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    <h3>Kawasaki ↗</h3>
+                    <p>Visit official website</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="index.html" class="logo">
+            MOTO<span>DEALS</span>
+        </a>
+
+        <p>Explore. Compare. Ride smart.</p>
+
+        <p class="footer-small">
+            © <span class="year"></span> MotoDeals
+        </p>
+    </footer>
+
+</body>
+</html>

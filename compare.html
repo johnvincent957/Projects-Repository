@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoDeals | Compare Prices</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">MOTO<span>DEALS</span></a>
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">HOME</a>
+            <a href="motorcycles.html">MOTORCYCLES</a>
+            <a href="compare.html">COMPARE PRICES</a>
+            <a href="about.html">ABOUT US</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="intro section-container">
+        <p class="eyebrow">MAKE INFORMED CHOICES</p>
+        <h2>Compare Motorcycle Prices</h2>
+        <p>
+            Select a motorcycle to see the example price difference.
+            All prices on this demonstration page are illustrative.
+        </p>
+    </section>
+
+    <section class="compare-section">
+        <div class="section-container">
+            <label for="compareSelect"><strong>Select a motorcycle</strong></label>
+            <select id="compareSelect"
+                    style="display:block;width:100%;max-width:500px;
+                    padding:13px;margin-top:12px;border:1px solid #ccc;
+                    border-radius:7px;background:white;">
+            </select>
+
+            <div class="comparison-card">
+                <img
+                    id="compareImage"
+                    class="comparison-image"
+                    alt=""
+                    loading="lazy">
+
+                <div class="comparison-info">
+                    <h3 id="compareName">Honda Click 125i</h3>
+
+                    <p>Reference price</p>
+                    <h3 id="originalPrice">₱90,000</h3>
+
+                    <p>Example discounted price</p>
+                    <h3 id="discountPrice" class="discount-price">₱75,000</h3>
+                </div>
+
+                <div class="savings-box">
+                    <p>Illustrative price difference</p>
+                    <h2 id="savingsAmount">₱15,000</h2>
+                    <p id="savingsPercent">16.7% below reference</p>
+                </div>
+            </div>
+
+            <p class="disclaimer">
+                These reference prices are sample values, not verified
+                original retail prices or current market valuations.
+                Actual used-motorcycle prices vary according to year,
+                mileage, condition, location, and documentation.
+            </p>
+        </div>
+    </section>
+
+    <section class="brands-section section-container">
+        <h2>Visit the Original Manufacturers</h2>
+        <p class="section-description">
+            Use official websites to research specifications and model
+            information. They may not list second-hand motorcycles.
+        </p>
+
+        <div class="brand-grid">
+            <a class="brand-card" href="https://www.hondaph.com/"
+               target="_blank" rel="noopener noreferrer">
+                <h3>Honda ↗</h3><p>Official website</p>
+            </a>
+            <a class="brand-card" href="https://www.yamaha-motor.com.ph/"
+               target="_blank" rel="noopener noreferrer">
+                <h3>Yamaha ↗</h3><p>Official website</p>
+            </a>
+            <a class="brand-card" href="https://mc.suzuki.com.ph/"
+               target="_blank" rel="noopener noreferrer">
+                <h3>Suzuki ↗</h3><p>Official website</p>
+            </a>
+            <a class="brand-card" href="https://kawasakiph.com/"
+               target="_blank" rel="noopener noreferrer">
+                <h3>Kawasaki ↗</h3><p>Official website</p>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <a href="index.html" class="logo">MOTO<span>DEALS</span></a>
+    <p class="footer-small">© <span class="year"></span> MotoDeals · Demo website</p>
+</footer>
+
+</body>
+</html>
