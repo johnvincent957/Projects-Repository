@@ -94,6 +94,23 @@
                 </figcaption>
             </figure>
         </div>
+        <section class="section-container about-map" aria-labelledby="about-map-title">
+            <p class="eyebrow">FIND US</p>
+            <h2 id="about-map-title">Our Location</h2>
+            <p id="mapStatus" class="map-status" role="status" aria-live="polite">
+                Loading map location…
+            </p>
+            <iframe
+                id="aboutMap"
+                class="about-map-frame"
+                title="MotoDeals location map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <a id="mapLink" class="map-link" target="_blank" rel="noopener noreferrer" hidden>
+                Open in OpenStreetMap
+            </a>
+        </section>
     </section>
 
     <section class="brands-section section-container">

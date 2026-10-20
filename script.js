@@ -329,5 +329,71 @@ if (compareSelect) {
     );
 }
 
+// Load the About page location from map.json and show it on OpenStreetMap.
+const aboutMap = document.getElementById("aboutMap");
+const mapStatus = document.getElementById("mapStatus");
+const mapLink = document.getElementById("mapLink");
+
+if (aboutMap && mapStatus && mapLink) {
+    fetch("map.json")
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error(`Could not load map.json (${response.status}).`);
+            }
+            return response.json();
+        })
+        .then(function (locations) {
+            if (!Array.isArray(locations) || locations.length === 0) {
+                throw new Error("map.json does not contain a location.");
+            }
+
+            const location = locations[0];
+            const latitude = Number(location.lat);
+            const longitude = Number(location.lng);
+
+            if (
+                !Number.isFinite(latitude) ||
+                !Number.isFinite(longitude) ||
+                latitude < -90 ||
+                latitude > 90 ||
+                longitude < -180 ||
+                longitude > 180
+            ) {
+                throw new Error("The location coordinates in map.json are invalid.");
+            }
+
+            const mapBounds = [
+                longitude - 0.04,
+                latitude - 0.03,
+                longitude + 0.04,
+                latitude + 0.03
+            ];
+            const embedUrl = new URL(
+                "https://www.openstreetmap.org/export/embed.html"
+            );
+            embedUrl.searchParams.set("bbox", mapBounds.join(","));
+            embedUrl.searchParams.set("layer", "mapnik");
+            embedUrl.searchParams.set("marker", `${latitude},${longitude}`);
+
+            const locationUrl = new URL("https://www.openstreetmap.org/");
+            locationUrl.searchParams.set("mlat", String(latitude));
+            locationUrl.searchParams.set("mlon", String(longitude));
+            locationUrl.hash = `map=14/${latitude}/${longitude}`;
+
+            aboutMap.src = embedUrl.toString();
+            aboutMap.title = `${location.name || "MotoDeals"} location map`;
+            mapLink.href = locationUrl.toString();
+            mapLink.hidden = false;
+            mapStatus.textContent = location.title
+                ? `${location.name || "MotoDeals"} · ${location.title}`
+                : location.name || "MotoDeals";
+        })
+        .catch(function (error) {
+            console.error("Unable to display the About page map:", error);
+            mapStatus.textContent =
+                "The map could not be loaded. Please check map.json and open this page through a web server.";
+        });
+}
+
 console.log("MotoDeals JavaScript loaded.");
 console.log("Motorcycle grid found:", Boolean(productGrid));
